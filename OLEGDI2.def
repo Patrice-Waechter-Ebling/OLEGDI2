@@ -1,0 +1,35 @@
+LIBRARY	olegdi+
+EXPORTS
+void initTransfoDatas();
+char* ReadDatas(char* Section, char* Clef, char* Source);
+int GetPackVersion(char* Source);
+int SetDefautVersion(char* Source);
+int UpdateDatas(char* Section, char* Clef, char* Valeur, char* Cible);
+int UpdateDatas(char* Section, char* Clef, double Valeur, char* Cible);
+int SaveData(TTransfoDatasV2 datas, char* Cible);
+int CreerRapportText(char* Cible, TTransfoDatasV2 datas);
+int InsererControleCodeBarre(HINSTANCE hExterne, HWND hConteneur, COLORREF CouleurCB, HBRUSH Arrierplan);
+LRESULT CALLBACK ModuleCBProcedure(HWND hDlg , UINT Message, WPARAM wParam, LPARAM lParam);
+void SetBits(char **lppData, int * lpPos, WORD wCode, int len);
+int Decode(const char * pszCode);
+int GetApproximateStep(int width);
+int GetMinimalHeight(HDC hdc, int step);
+int CheckDigit(const char * pszCode, BOOL bComplet);
+void Draw(HDC hdc, POINT pt, int height, int step);
+int SetIndex(char car);
+int GetApproximateWidth(int step);
+const char* GetCodeString();
+int GetAppLastError();
+const char* ErrorString(int);
+PBITMAPINFO CreateBitmapInfoStruct(HWND hwnd, HBITMAP hBmp);
+void CreateBMPFile(HWND hwnd, LPTSTR pszFile, PBITMAPINFO pbi,HBITMAP hBMP, HDC hDC);
+void errhandler(LPCTSTR Texte,HWND hwnd);
+void SetResultCode(HWND hwnd);
+BOOL PreparePrint(HDC hdc, POINTFLOAT ptf, LPRECT lprc);
+void SetResultCode(HWND hwnd);
+BOOL PreparePrint(HDC hdc, POINTFLOAT ptf, LPRECT lprc);
+int GetAppLastError();
+const char* ErrorString(int error);
+const char* GetCodeString();
+int MsgBox(HINSTANCE hInst,HWND hDlg,char* lpszText,char* lpszCaption, DWORD dwStyle,int lpszIcon);
+LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
